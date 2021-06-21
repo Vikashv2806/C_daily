@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main(){
+
+    int n,a,i,flag=0;
+    printf("Enter The Number of Elements:- ");
+    scanf("%d",&n);
+    int arr[n];
+
+    //Input
+    for(i=0;i<n;i++){
+        printf("Enter the %d Element:- ",i+1);
+        scanf("%d",&arr[i]); }
+
+    printf("Enter a Number:- ");
+    scanf("%d",&a);
+    
+    //Linear search
+    for(i=0;i<n;i++){
+       if(arr[i]==a){
+          flag++;       
+        }
+    }
+    
+    if(flag>0){
+       printf("Entered Number Exist Count:- %d",flag); 
+    }
+    
+    else{
+        printf("Entered Not Number Exist"); 
+    }
+
+    return 0;
+}

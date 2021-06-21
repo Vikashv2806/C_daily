@@ -1,0 +1,117 @@
+
+Multiple assingment
+	 a=b=c=0
+swaping 
+   a,b,c = b,c,a
+ 
+
+
+Strings
+- Immutable 	once created cannot be changed
+- Single/Double/Triple Quotes (Documentation Strings)	
+- concatenation(+, quotes* works with only literals)   * + always produces a new string
+- Repeatition(*)
+- indexing [-i]
+- slicing [start:finish:steps]
+
+
+Lists
+- Mutable
+- Compulsory to declare before use
+- Concatenation + ,		extend
+- .append()
+- slicing   * (can mutate, change length, clear all elements)
+- nested Lists
+- List cloning
+
+Operators  (Precedence and associativity)
+
+**
+* /  
++ -
+
+
+%
+
+a = [ ]
+a.append()
+
+&
+|
+^
+~
+<<
+>>
+
+
+
+
+
+
+Conditionals
+-if elif else
+
+Loops:
+- for, while	* support for else with loop
+- break, continue
+
+Iterables
+ - range() ->	iterable
+
+keywords:
+- pass , del, None
+
+**********************
+Value Types (Primitive)(structure)* 		V/s	 Reference Types (classes)*
+- stored on stack					-stored on heap
+- Imediately removed when out of scope			- Garbage Collection             *
+- Memory allocated automatically			- Explicit memory allocatio  (new- keyword)  *
+int a = 5;						new instance memory allocate 
+c
+
+class Person: name, age
+
+P1("a", 15)	P2("b",16)
+	P3("c", 17)
+
+
+
+-* Cloning concept
+	(Memory address pointing to same object)
+
+
+Membership: is - keyword
+
+a remains as it is 
+b = [99, .....]
+
+
+heap -> address ->value
+a ->stack -> adress
+b = a
+a -> address
+b = address
+heap -> adresss -> value
+is -> check if they points to same object
+
+
+3+4**5/2*3-1 = ?
+
+power	
+divide multiply
+plus minus
+
+4**5  
+1024
+512*3
+
+3+1536-1
+1538
+
+
+
+
+
+
+
+

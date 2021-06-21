@@ -1,0 +1,73 @@
+/*
+ Insertion sort is a simple sorting algorithm 
+ that works similar to the way you sort playing cards 
+ in your hands. The array is virtually split into a sorted 
+ and an unsorted part. Values from the unsorted part are picked 
+ and placed at the correct position in the sorted part.
+ 
+ Algorithm:- 
+  To sort an array of size n in ascending order: 
+   1: Iterate from arr[1] to arr[n] over the array. 
+   2: Compare the current element (key) to its predecessor. 
+   3: If the key element is smaller than its predecessor, compare 
+      it to the elements before. Move the greater elements one position up 
+      to make space for the swapped element.
+                0  1  2  3  4
+       arr[] = 64 25 12 22 11
+                
+        i=0
+        j=0    25 64 12 22 11
+        j=1    25 12 64 22 11
+        j=2    25 12 22 64 11
+        j=3    25 12 22 11 64
+
+
+        i=1
+        j=0    12 25 22 11 64
+        j=1    12 22 25 11 64
+        j=2    12 22 11 25 64
+        
+        i=2
+        j=0    12 22 11 25 64
+        j=1    12 11 22 25 64
+        
+        i=3
+        j=0    11 12 22 25 64
+*/  
+
+
+#include<stdio.h>
+int main(){
+
+    int n,i,j,key;
+    printf("Enter The Number of Elements:- ");
+    scanf("%d",&n);
+    int arr[n];
+
+    // Input
+    for(i=0;i<n;i++){
+        printf("Enter the %d Element:- ",i+1);
+        scanf("%d",&arr[i]); }
+
+    // Output
+    printf("The Original Elements are:- ");
+    for(i=0;i<n;i++)
+        printf("%d, ",arr[i]); 
+
+    // Insertion Sortion Algorithm
+    for (i = 1; i < n; i++) {//(1,2,3,4)
+        key = arr[i];//25
+        j = i - 1;//1
+        while (j >= 0 && arr[j] > key) { //64>12
+            arr[j + 1] = arr[j];//1 = 0
+            j = j - 1;//-1
+        }
+        arr[j + 1] = key;//0 = 1
+    }  
+
+    printf("\nThe Selection Sorted Elements are:- ");
+    for(int i=0;i<n;i++)
+        printf("%d, ",arr[i]); 
+    return 0;
+}
+  

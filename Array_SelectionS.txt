@@ -1,0 +1,82 @@
+// Theory:-
+
+// Sorting Algorithms:- A Sorting Algorithm is used to rearrange a given array or list elements according to a comparison operator on the elements. 
+// The comparison operator is used to decide the new order of element in the respective data structure.
+
+// In our course we have 3 main Sorting Algorithm:-
+// 1. Selection Sort 
+// 2. Bubble Sort 
+// 3. Insertion Sort 
+
+// Selection Sorting:-The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. 
+// The algorithm maintains two subarrays in a given array.
+
+// 1) The subarray which is already sorted.
+// 2) Remaining subarray which is unsorted.
+
+// In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.
+
+// Following example explains the above steps:
+
+// Let us take an Array of 5 elements arr[5] = 64 25 12 22 11.
+
+//  Index No. 0  1  2  3  4
+// // arr[] = 64 25 12 22 11
+// i=0
+// j=1        25 64 12 22 11
+// j=2        12 64 25 22 11
+// j=3        12 64 25 22 11
+// j=4        11 64 25 22 12
+ 
+// i=1          
+// j=2        11 25 64 22 12
+// j=3        11 22 64 25 12
+// j=4	      11 12 64 25 22
+           
+// i=2        
+// j=3        11 12 25 64 22
+// j=4        11 12 22 64 25
+           
+// i=3            
+// j=4        11 12 22 25 64 // Array Sorted using Selection Sort Algorithm in Ascending Order.
+
+
+Code for Array_SelectionS.c :- 
+
+#include<stdio.h>
+int main(){
+
+    int n,i,j,temp;
+    printf("Enter The Number of Elements:- ");
+    scanf("%d",&n);
+    int arr[n];
+
+    // Input
+    for(i=0;i<n;i++){
+        printf("Enter the %d Element:- ",i+1);
+        scanf("%d",&arr[i]); }
+
+    // Output
+    printf("The Original Elements are:- ");
+    for(i=0;i<n;i++)
+        printf("%d, ",arr[i]); 
+
+    // Selection Sortion Algorithm
+    for (i = 0; i < n-1; i++){  // 0 to 3  (0,1,2,3)                            i
+        for (j = i+1; j < n; j++){ // i+1 to n-1 (1,2,3,4) (2,3,4) (3,4) (4)
+          if (arr[j] < arr[i]){
+              temp = arr[i]; 
+              arr[i] = arr[j];//Swap arr[i] with arr[j]
+              arr[j] = temp;
+          
+            }
+        }
+    }    
+    printf("\nThe Selection Sorted Elements are:- ");
+    for(int i=0;i<n;i++)
+        printf("%d, ",arr[i]); 
+    return 0;
+}
+
+
+

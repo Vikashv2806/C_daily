@@ -1,0 +1,303 @@
+
+Functions
+
+conversion character 
+chr( i ) -> ANSII
+ord( c ) -> ANSII code
+int()
+str()
+repr()
+list()
+
+Need of functions
+
+return-type func_name(params.)
+define 
+
+method signature
+
+char[] f(type param){
+	...................
+	return arr;
+	....................
+}
+
+f(sdfs);	function call
+parameter 
+argument
+
+
+def f(params):
+      ..................
+      return l
+      ..............................
+	
+
+function call - value
+f(dsf);
+
+Parameter  :	 
+Argument  : 	
+
+f(23,53)
+def f( x,  y ):
+	return x+y
+	
+x = 5
+
+f()
+-   Activation Record
+stored on call stack
+
+
+def fact(n):
+	//base case 
+	if n==0:
+		return 1
+	return n*fact(n-1);
+
+f(5) = ?
+
+
+Map & Filter 
+
+map(f,l) applies f to each element in l	
+O/P of map in not list
+
+
+filter(p,l) checks p for each element of l
+O/P is sublist that satisfies p
+
+
+
+
+
+
+
+
+
+
+c/c++ Functions:
+-Call/Execution Stack concepts (Activation Record/Execution Context)
+
+-Call by value : Values of function parameters copied from activation record of caller to activation record of callee
+-Any changes done on local variables of callee completely lost when callee returns to caller
+-local variables of a function are also called stack variables
+
+-Call by reference : (allows variables to be shared)  *** CAREFULL while using
+- no space allocated for local variables of callee functions
+- lead to significant savings in memory required for call stack
+- cannot pass a constant as parameter of a function called by reference("otherwise caller will be "changed" by callee)
+
+
+SYMBOL TABLE 
+& - adressof
+type* - pointers(stores the address of var.)
+
+
+
+-defining functions
+*applies to immutable -> if initiated becomes local scope var	  [No problem for mutable]
+-local symbol table -> local symbol table of enclosing Function -> Global Symbol table -> tables with built-in names  
+- global statements/ non-local statements	
+	-global keyword
+- function call
+- call by value vs call by reference (In python they are almost same) 
+- return statement
+-Nested Function (local scope functions)
+
+-Parameters Vs Arguments
+	- Default Parameters ( ex.-> int(s,base)  )
+	- Keyword Arguments
+	- **name : recieves dictionay (Types mapping)
+	- *name : recieves tuples  (NOTE : *name must appear before **name if both are given)
+	- Special Parameters (Positional / keywords)
+		- def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+		- Positional Only: parameters order matters; keywords not allowed; placed before / (forward slash)
+		- Keyword Only : parameter has to be passed by keywords ; order doesn't matter; placed after * 
+		- Positional-or-Keyword: placed between / and * 
+
+	-Arbitrary Argument List
+	-Unpacking Argument List
+	-Lambda Expression
+	-Documentation String
+		
+	
+RECURSION
+base case
+inductive step
+
+-stackoverflow
+
+Memory Allocation
+
+Pros & Cons of recursion
+- Memory // functions get suspended
+
+- Breaking bigger problems into smaller problems
+
+
+
+
+def f(a, b, c):
+	...................
+
+f(12,24,554)
+
+f(b=12, c=24, a=554)
+
+****************************************************************************
+	SAMPLE PROGRAMS
+
+************************************************************************
+"""
+Fundamental concept of function
+"""
+
+#global -> func 
+
+def f():
+	y = x		#y is a local variable   x is global variable
+	print(y)
+				#niiiii
+x = 5
+f();
+#x = y = 5?
+
+
+def f():			
+	y = x
+	print(y)
+	x = 22
+
+x = 7
+f();
+
+
+def f():
+	global x	
+	y = x
+	print(y)
+	x = 22
+
+
+x = 7
+f();
+********************************************************************************
+
+def f(name, is_active=True):
+	print("name : ", name)
+	print("is_active : ", is_active)
+
+**************************************************************************
+
+def f(name, score=None, verified=True ,is_active=True):
+	print("name : ", name)
+	print("total score : ", 5 * score)
+	print("is_active : ", is_active)
+
+******************************************************************************
+
+
+def standard_arg(arg):
+	print(arg)
+
+def pos_only_arg(arg, /):
+	print(arg)
+#pos_only_arg(arg=1) -> Raise Error
+
+def kwd_only_arg(*, arg):
+	print(arg)
+#kwd_only_arg(1) 	-> Raise Error
+
+def combined_exp(/,pos_only, standard, * , kwd_only):
+	print(pos_only, standard, kwd_only)
+
+#combined_exp(1,2,3)   	-> Raise Error
+#combined_exp(pos_only=1, standard = 2, kwd_only=3)	-> Raise Error 
+#use mixed formed param
+
+
+#Conflict between name as positional and key in dict.
+def foo(name, **kwds):
+	return 'name' in kwds
+
+********************************************************************************
+
+#small anonymous functions
+
+def square(x):
+	return x*x
+
+sq = lambda x: x*x
+
+
+*******************************************************************************
+# any formal formal  which occur after the *args parameter
+#are ‘keyword-only’ arguments
+
+def concat(*args, sep=","):
+	return sep.join(args)
+
+
+********************************************************************************
+
+
+#range function analogy
+
+list(range(3, 6)) 
+[3, 4, 5]
+
+args = [3, 11,2]
+list(range(*args)) 
+[3, 4, 5]
+
+*****************************************************************************'
+
+def is_even(x):
+	return (x%2==0)	#returns bool
+
+def square(x):
+	return x*x
+
+l = [1,2,3,4,545,3,64,76,3,2]
+only_evens = list(filter(is_even, l))
+
+even_squares = list(map(square,only_evens))
+
+#Generators
+#[square(x) for x in range(100) if is_even(x)]
+
+
+#list of numbers
+#input no. space -separated
+# 4 5 2 3 1 -> [4, 5, 2,3,1]
+
+l = list(map(int, input().split(" ")))
+
+l = list(map(int, input().split(" ")))	
+
+*******************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

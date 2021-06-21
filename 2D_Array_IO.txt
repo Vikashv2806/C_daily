@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main(){
+   int i,j,row,column;
+   printf("Enter Number of Rows:- ");
+   scanf("%d",&row);
+   printf("Enter Number of Columns:- ");
+   scanf("%d",&column);
+   int arr[row][column];
+  
+   //Input
+   for (i=0;i<row;i++){
+       for(j=0;j<column;j++){
+            printf("Enter Element of Row %d & Column %d:- ",i+1,j+1);
+            scanf("%d",&arr[i][j]);
+       }
+   } 
+  
+   //Output
+   printf("The Entered Elements are:- \n");
+   for (i=0;i<row;i++){
+       printf("  ");
+       for(j=0;j<column;j++){
+           printf("%d ",arr[i][j]);
+       }
+       printf("\n");
+   } 
+    return 0;
+ } 

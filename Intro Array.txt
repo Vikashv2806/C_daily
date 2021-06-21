@@ -1,0 +1,32 @@
+#include<stdio.h>
+
+int main(){
+    
+    int num[5];
+ //Integer 4 bytes x 5 elements = 20 bytes.
+    return 0; 
+}
+
+
+// (1). An Array is collecting of <same> element/items.//Like int,float,etc.
+// (2). Array is Mutable.//That means can be change again and again.
+// (3). Array follows concept of indexing.//i.e every element in a array is given a index number. 
+// (4). Index Number start from 0 and end at n-1.
+// (5). Data type name of variable[size of array]; //declearation
+// (6). Data type name of variable[] = {};  //Initialization//no need of size
+// (7). name of variable[Index] = value;  //Insertion
+// (8). name of variable[Index]; //Extraction
+// (9). "num" gives address of first element of array.
+// (10). While “&num” gives address of whole array of n int size.
+// (11). To understand point (9) and (10) let us take an example.
+// For example address of first element of an array is 2000.
+// So, when we use printf("%d",num) it prints 2000 as its "num" gives address of first element. 
+// while use printf("%d",&num) it also prints 2000 because array start from the first element. 
+
+// But to show u guys the difference we use printf("%d",num+1) it prints 2004 as its address of a element when we add 1 it jumps one step forward.
+// While, when we use printf("%d",&num+1) 2016 as integer is of 4 bytes and we have 4 elements i.e.,4x4=16.
+
+// If variable is NOT initalized,
+// 	-if the variable is a local variable then default value is "Garbage value"
+// 	-if the variable is global variable, then default value is 0.
+// But if atleast 1 element of an array is initialized with a value then other element are initialized with 0.

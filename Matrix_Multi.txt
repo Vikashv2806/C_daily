@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main(){
+    int i,j,k,sum=0;
+    int arr1[3][3]={{1,1,1},
+                   {2,2,2}, 
+                   {3,3,3}};
+                
+    int arr2[3][3]={{1,1,1},
+                    {2,2,2},
+                    {3,3,3}};
+    int result[3][3];
+    
+    for (i=0;i<3;i++){
+        for(k=0;k<3;k++){
+            for (j=0;j<3;j++){
+                sum += arr1[i][j] * arr2[j][k];
+            }
+            result[i][k]=sum;
+            sum=0;
+        }
+    }
+
+   printf("Multiplication of Given Matrix is:- \n");
+   for (i=0;i<3;i++){
+       printf("  ");
+       for(j=0;j<3;j++){
+        printf("%7d",result[i][j]);
+       }
+       printf("\n");
+   } 
+
+    return 0;
+}
